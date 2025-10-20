@@ -1,8 +1,8 @@
 # app.py
 import streamlit as st
 import json
-import pandas as pd
 from pathlib import Path
+from datetime import datetime
 import matplotlib.pyplot as plt
 
 # ---------- CONFIG ----------
@@ -10,49 +10,75 @@ DATA_DIR = Path("data")
 DATA_DIR.mkdir(exist_ok=True)
 ADMIN_EMAIL = "kevin.172062@fmm.org.br"
 
-# ---------- TÓPICOS ---------- (resumido aqui, substituir pelo conteúdo completo de cada tópico com 10 questões)
+# ---------- TÓPICOS (exemplo simplificado, complete com 10 questões cada) ----------
 TOPICOS = {
     "Segurança no trabalho": {
-        "conteudo": "Conteúdo completo de Segurança no Trabalho, incluindo NR-6, NR-12 e exemplos práticos.",
+        "conteudo": (
+            "A segurança no trabalho é imperativo legal e ético. "
+            "NR-6 exige uso de EPIs. NR-12 estabelece requisitos de proteção de máquinas. "
+            "Reportar riscos, usar EPIs corretamente e seguir bloqueios são práticas obrigatórias."
+        ),
         "questoes": [
-            {"pergunta": "De acordo com a NR-6, qual ação correta ao identificar um EPI danificado?",
-             "opcoes": ["Consertar sozinho", "Comunicar e aguardar substituição", "Continuar sem EPI"],
-             "resposta": 1,
-             "explicacao": [
-                 "Errado: Consertar sozinho pode colocar sua vida em risco.",
-                 "Correto: Comunicar imediatamente e aguardar substituição é o correto.",
-                 "Errado: Continuar sem EPI viola normas de segurança."]
+            {
+                "pergunta": "De acordo com a NR-6, qual ação correta ao identificar um EPI danificado?",
+                "opcoes": ["Consertar sozinho", "Comunicar e aguardar substituição", "Continuar sem EPI"],
+                "resposta": 1,
+                "explicacao": [
+                    "Errado: Consertar sozinho pode colocar sua vida em risco.",
+                    "Correto: Comunicar imediatamente e aguardar substituição.",
+                    "Errado: Continuar sem EPI viola normas de segurança."]
             },
-            # Adicione as 9 questões restantes aqui...
+            {
+                "pergunta": "Participar de treinamentos de segurança é:",
+                "opcoes": ["Opcional", "Obrigatório e ético", "Perda de tempo"],
+                "resposta": 1,
+                "explicacao": [
+                    "Errado: Não é opcional.",
+                    "Correto: Treinamentos são obrigatórios e reforçam ética.",
+                    "Errado: Não é perda de tempo."]
+            }
         ]
     },
     "Boas práticas": {
-        "conteudo": "Conteúdo completo sobre Boas Práticas Industriais e ética operacional.",
+        "conteudo": (
+            "Boas práticas industriais envolvem 5S, checklists, reportar não conformidades, "
+            "manter áreas limpas e organizar materiais para segurança e eficiência."
+        ),
         "questoes": [
-            # 10 questões completas
+            # Adicione 10 questões completas aqui
         ]
     },
     "Compliance": {
-        "conteudo": "Conteúdo completo sobre Compliance Industrial e cumprimento das NRs.",
+        "conteudo": (
+            "Compliance industrial garante atuação dentro de normas legais, éticas e regulamentares. "
+            "Inclui código de conduta, prevenção de fraudes e cumprimento das NRs."
+        ),
         "questoes": [
-            # 10 questões completas
+            # Adicione 10 questões completas aqui
         ]
     },
     "Assédio moral e sexual": {
-        "conteudo": "Conteúdo completo sobre assédio moral e sexual, prevenção e conduta ética.",
+        "conteudo": (
+            "Assédio moral: humilhação, intimidação ou tratamento desigual repetido. "
+            "Assédio sexual: comentários, gestos ou convites indesejados de cunho sexual. "
+            "Reportar qualquer situação de assédio é obrigação ética e legal."
+        ),
         "questoes": [
-            # 10 questões completas
+            # Adicione 10 questões completas aqui
         ]
     },
     "Normas Regulamentadoras": {
-        "conteudo": "Conteúdo completo sobre NRs (NR-6, NR-12, NR-26, NR-17) interpretadas eticamente.",
+        "conteudo": (
+            "NRs definem obrigações legais e práticas de segurança. Exemplos: NR-6 (EPI), NR-12 (máquinas), NR-26 (sinalização), NR-17 (ergonomia). "
+            "Cumprir NRs garante ética, proteção física e legalidade."
+        ),
         "questoes": [
-            # 10 questões completas
+            # Adicione 10 questões completas aqui
         ]
-    }
+    },
 }
 
-# ---------- FUNÇÕES ----------
+# ---------- FUNÇÕES DE DADOS ----------
 def save_user_data(user_email, payload):
     path = DATA_DIR / f"{user_email.replace('@','_at_')}.json"
     existing = {}
@@ -64,18 +90,20 @@ def save_user_data(user_email, payload):
 def get_user_data(user_email):
     path = DATA_DIR / f"{user_email.replace('@','_at_')}.json"
     if not path.exists():
-        return {}
+        return {"history": []}
     return json.loads(path.read_text(encoding='utf-8'))
-
-def initialize_session():
-    if "results" not in st.session_state:
-        st.session_state["results"] = {}
-    if "feedbacks" not in st.session_state:
-        st.session_state["feedbacks"] = {}
 
 # ---------- LOGIN ----------
 def login_screen():
     st.header("Simulador Ético Industrial — Login")
+    # Logout se já estiver logado
+    if st.session_state.get("user"):
+        st.write(f"Logado como: {st.session_state['user']['email']}")
+        if st.button("Sair"):
+            st.session_state.pop("user")
+            st.experimental_rerun()
+        return  # Evita continuar execução
+    # Login
     name = st.text_input("Nome")
     email = st.text_input("Email")
     if st.button("Entrar"):
@@ -83,115 +111,127 @@ def login_screen():
             st.session_state["user"] = {"name": name, "email": email}
             st.success(f"Olá, {name}! Login efetuado.")
             st.experimental_rerun()
-            return
         else:
             st.error("Informe seu e-mail para continuar.")
-    # Botão logout aparece se já houver sessão
-    if st.session_state.get("user"):
-        if st.button("Sair"):
-            st.session_state.pop("user")
-            st.success("Logout realizado.")
-            st.experimental_rerun()
-            return
 
 # ---------- TELA DE TÓPICOS ----------
-def show_topics():
-    st.header("Tópicos")
-    topico_selecionado = st.selectbox("Escolha um tópico:", list(TOPICOS.keys()))
-    topico = TOPICOS[topico_selecionado]
+def topico_screen():
+    st.header("Escolha um Tópico")
+    topico_escolhido = st.selectbox("Tópicos disponíveis", list(TOPICOS.keys()))
+    conteudo = TOPICOS[topico_escolhido]["conteudo"]
     st.subheader("Conteúdo")
-    st.write(topico["conteudo"])
-
+    st.write(conteudo)
+    st.subheader("Questionário")
     respostas_usuario = []
-    st.subheader("Questões")
-    for idx, q in enumerate(topico["questoes"]):
-        resposta = st.radio(f"{idx+1}. {q['pergunta']}", q["opcoes"], key=f"{topico_selecionado}_{idx}")
-        respostas_usuario.append(resposta)
-
-    if st.button("Enviar respostas"):
+    for i, q in enumerate(TOPICOS[topico_escolhido]["questoes"]):
+        st.write(f"**{i+1}. {q['pergunta']}**")
+        escolha = st.radio("", q["opcoes"], key=f"{topico_escolhido}_{i}")
+        respostas_usuario.append(escolha)
+    if st.button("Enviar Respostas", key=f"enviar_{topico_escolhido}"):
         acertos = 0
         detalhes = []
-        for idx, q in enumerate(topico["questoes"]):
-            correta = q["opcoes"][q["resposta"]]
-            explicacao = q["explicacao"]
-            resposta_usuario = respostas_usuario[idx]
-            acerto = (resposta_usuario == correta)
-            acertos += acerto
+        for i, q in enumerate(TOPICOS[topico_escolhido]["questoes"]):
+            idx_escolha = TOPICOS[topico_escolhido]["questoes"][i]["opcoes"].index(respostas_usuario[i])
+            if idx_escolha == q["resposta"]:
+                acertos += 1
             detalhes.append({
                 "pergunta": q["pergunta"],
-                "resposta_usuario": resposta_usuario,
-                "correta": correta,
-                "explicacao": explicacao
+                "resposta_usuario": respostas_usuario[i],
+                "correto": q["opcoes"][q["resposta"]],
+                "explicacao": q["explicacao"][idx_escolha]
             })
-        st.success(f"Você acertou {acertos}/{len(topico['questoes'])} questões.")
-        st.write("Detalhes por questão:")
+        st.write(f"Você acertou {acertos} de {len(TOPICOS[topico_escolhido]['questoes'])}")
         for d in detalhes:
-            st.markdown(f"**{d['pergunta']}**")
-            st.write(f"Sua resposta: {d['resposta_usuario']}")
-            st.write(f"Correta: {d['correta']}")
-            for e in d["explicacao"]:
-                st.write(f"- {e}")
-        feedback = st.text_area("Deixe seu feedback sobre o que aprendeu:")
-        save_user_data(st.session_state["user"]["email"], {
-            "topico": topico_selecionado,
+            st.write(f"- {d['pergunta']}")
+            st.write(f"  - Sua resposta: {d['resposta_usuario']}")
+            st.write(f"  - Correta: {d['correto']}")
+            st.write(f"  - Explicação: {d['explicacao']}")
+        feedback = st.text_area("Feedback: O que você aprendeu?")
+        payload = {
+            "topico": topico_escolhido,
             "detalhes": detalhes,
-            "acertos": acertos,
-            "feedback": feedback
-        })
+            "feedback": feedback,
+            "timestamp": str(datetime.now())
+        }
+        save_user_data(st.session_state["user"]["email"], payload)
+        st.success("Dados salvos!")
 
 # ---------- TELA DE ADMIN ----------
-def admin_panel():
-    st.header("Painel de Administração")
-    st.write("Visualização de desempenho e exportação de dados.")
-
+def admin_screen():
+    st.header("Administração — Exportar Dados")
+    if st.session_state["user"]["email"] != ADMIN_EMAIL:
+        st.error("Acesso negado.")
+        return
     arquivos = list(DATA_DIR.glob("*.json"))
+    if not arquivos:
+        st.info("Nenhum dado encontrado.")
+        return
     for arquivo in arquivos:
-        email_usuario = arquivo.stem.replace("_at_", "@")
-        st.subheader(f"Usuário: {email_usuario}")
-        data = json.loads(arquivo.read_text(encoding='utf-8'))
-        df = pd.DataFrame(data.get("history", []))
-        if not df.empty:
-            st.write(df[["topico","acertos","feedback"]])
-            # Gráfico de pizza
-            for idx, row in df.iterrows():
-                st.write(f"Tópico: {row['topico']}")
-                plt.figure()
-                plt.pie([row['acertos'], len(TOPICOS[row['topico']]['questoes']) - row['acertos']],
-                        labels=["Acertos", "Erros"], autopct="%1.1f%%", colors=["green","red"])
-                st.pyplot(plt)
-    if st.button("Exportar CSV de todos os usuários"):
-        combined = []
+        data = json.loads(arquivo.read_text(encoding="utf-8"))
+        st.write(f"Usuário: {arquivo.stem.replace('_at_','@')}")
+        for h in data.get("history", []):
+            st.write(h)
+    # Exportar CSV
+    if st.button("Exportar todos os dados para CSV"):
+        import pandas as pd
+        all_data = []
         for arquivo in arquivos:
-            email_usuario = arquivo.stem.replace("_at_", "@")
-            data = json.loads(arquivo.read_text(encoding='utf-8'))
+            data = json.loads(arquivo.read_text(encoding="utf-8"))
+            email = arquivo.stem.replace("_at_", "@")
             for h in data.get("history", []):
-                h["email"] = email_usuario
-                combined.append(h)
-        df_all = pd.DataFrame(combined)
-        csv_path = DATA_DIR / "export_all_users.csv"
-        df_all.to_csv(csv_path, index=False)
-        st.success(f"CSV exportado em: {csv_path}")
+                for d in h["detalhes"]:
+                    all_data.append({
+                        "email": email,
+                        "topico": h["topico"],
+                        "pergunta": d["pergunta"],
+                        "resposta_usuario": d["resposta_usuario"],
+                        "resposta_correta": d["correto"],
+                        "explicacao": d["explicacao"],
+                        "feedback": h["feedback"],
+                        "timestamp": h["timestamp"]
+                    })
+        df = pd.DataFrame(all_data)
+        csv_path = DATA_DIR / "export_dados.csv"
+        df.to_csv(csv_path, index=False)
+        st.success(f"CSV salvo em {csv_path}")
+
+# ---------- GRAFICOS DE DESEMPENHO ----------
+def performance_screen():
+    st.header("Desempenho do usuário")
+    user_email = st.session_state["user"]["email"]
+    data = get_user_data(user_email)
+    if not data["history"]:
+        st.info("Nenhum dado disponível.")
+        return
+    for topico in TOPICOS.keys():
+        acertos = 0
+        erros = 0
+        for h in data["history"]:
+            if h["topico"] == topico:
+                for d in h["detalhes"]:
+                    if d["resposta_usuario"] == d["correto"]:
+                        acertos += 1
+                    else:
+                        erros += 1
+        if acertos + erros > 0:
+            st.write(f"**{topico}**")
+            fig, ax = plt.subplots()
+            ax.pie([acertos, erros], labels=["Acertos", "Erros"], autopct="%1.1f%%", colors=["green","red"])
+            st.pyplot(fig)
 
 # ---------- MAIN ----------
 def main():
-    initialize_session()
     if "user" not in st.session_state:
         login_screen()
         return
-    st.sidebar.write(f"Logado como: {st.session_state['user']['email']}")
-    if st.session_state["user"]["email"] == ADMIN_EMAIL:
-        painel_opcoes = ["Tópicos", "Admin"]
-    else:
-        painel_opcoes = ["Tópicos"]
-    opcao = st.sidebar.selectbox("Menu", painel_opcoes)
-    if st.sidebar.button("Logout"):
-        st.session_state.pop("user")
-        st.experimental_rerun()
-        return
-    if opcao == "Tópicos":
-        show_topics()
-    elif opcao == "Admin":
-        admin_panel()
+    menu = ["Tópicos", "Desempenho", "Administração"]
+    escolha = st.sidebar.selectbox("Menu", menu)
+    if escolha == "Tópicos":
+        topico_screen()
+    elif escolha == "Desempenho":
+        performance_screen()
+    elif escolha == "Administração":
+        admin_screen()
 
 if __name__ == "__main__":
     main()
