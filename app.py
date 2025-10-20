@@ -106,6 +106,94 @@ TOPICOS = {
             }
         ]
     },
+    "Compliance": {
+        "conteudo": (
+            "Compliance industrial garante que todos os colaboradores atuem dentro das normas legais, regulamentares e éticas. "
+            "Inclui políticas internas, código de conduta, canais de denúncia, prevenção de fraudes e cumprimento das NRs."
+        ),
+        "questoes": [
+            {"pergunta": "O que é compliance?",
+             "opcoes": ["Seguir leis e ética", "Apenas cumprir produção", "Ignorar riscos"],
+             "resposta": 0,
+             "explicacao": [
+                 "Correto: Compliance é seguir leis e ética.",
+                 "Errado: Não é só produção.",
+                 "Errado: Ignorar riscos é antiético."]
+            },
+            {"pergunta": "Reportar irregularidades é:",
+             "opcoes": ["Obrigatório", "Opcional", "Proibido"],
+             "resposta": 0,
+             "explicacao": [
+                 "Correto: Reportar é obrigatório.",
+                 "Errado: Não é opcional.",
+                 "Errado: Não é proibido."]
+            },
+            {"pergunta": "Canais de denúncia servem para:",
+             "opcoes": ["Garantir confidencialidade e correção de erros", "Difamar colegas", "Ignorar problemas"],
+             "resposta": 0,
+             "explicacao": [
+                 "Correto: Servem para corrigir problemas de forma ética.",
+                 "Errado: Não são para difamar.",
+                 "Errado: Não devem ignorar problemas."]
+            },
+            {"pergunta": "Compliance melhora:",
+             "opcoes": ["Ética e segurança", "Produção somente", "Nada"],
+             "resposta": 0,
+             "explicacao": [
+                 "Correto: Melhora ética, segurança e confiabilidade.",
+                 "Errado: Não apenas produção.",
+                 "Errado: Tem efeito real."]
+            },
+            {"pergunta": "Ignorar normas internas é:",
+             "opcoes": ["Errado", "Aceitável", "Recomendado"],
+             "resposta": 0,
+             "explicacao": [
+                 "Correto: Errado e antiético.",
+                 "Errado: Não é aceitável.",
+                 "Errado: Nunca recomendado."]
+            },
+            {"pergunta": "Cumprir o código de conduta é:",
+             "opcoes": ["Obrigatório e ético", "Opcional", "Só para gerência"],
+             "resposta": 0,
+             "explicacao": [
+                 "Correto: Todos devem cumprir.",
+                 "Errado: Não é opcional.",
+                 "Errado: Não é só para gerência."]
+            },
+            {"pergunta": "Fraudes e desvios devem ser:",
+             "opcoes": ["Reportados imediatamente", "Ignorados", "Corrigidos sozinho"],
+             "resposta": 0,
+             "explicacao": [
+                 "Correto: Reportar imediatamente.",
+                 "Errado: Ignorar é antiético.",
+                 "Errado: Corrigir sozinho é inseguro."]
+            },
+            {"pergunta": "A NR-1 exige:",
+             "opcoes": ["Cumprimento de todas as NRs", "Apenas segurança", "Não obriga nada"],
+             "resposta": 0,
+             "explicacao": [
+                 "Correto: NR-1 exige cumprimento das NRs.",
+                 "Errado: Não é apenas segurança.",
+                 "Errado: Obriga sim."]
+            },
+            {"pergunta": "Auditorias internas servem para:",
+             "opcoes": ["Garantir conformidade", "Punir sem razão", "Evitar responsabilidades"],
+             "resposta": 0,
+             "explicacao": [
+                 "Correto: Garantem que tudo siga as normas.",
+                 "Errado: Não é punir sem razão.",
+                 "Errado: Não é para evitar responsabilidade."]
+            },
+            {"pergunta": "Compliance protege:",
+             "opcoes": ["Empresa e colaboradores", "Só a diretoria", "Ninguém"],
+             "resposta": 0,
+             "explicacao": [
+                 "Correto: Protege todos, garantindo ética.",
+                 "Errado: Não apenas diretoria.",
+                 "Errado: Protege sim todos."]
+            }
+        ]
+    },
     # -------------------- OUTROS TÓPICOS (Boas Práticas, Compliance, Assédio, Normas) --------------------
     # Aqui você pode incluir os outros tópicos com 10 questões cada, seguindo o mesmo modelo de Segurança
 }
