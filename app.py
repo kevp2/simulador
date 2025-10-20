@@ -33,80 +33,437 @@ TOPICOS = {
                  "Correto: Comunicar imediatamente e aguardar substituição é o procedimento correto e ético.",
                  "Errado: Continuar sem EPI é uma violação das normas de segurança e ética."]
             },
-            # ... (adicione as demais 9 questões conforme o exemplo anterior)
+            {"pergunta": "Ao operar uma máquina sem proteção adequada, o operador está:",
+             "opcoes": ["Cumprindo a NR-12", "Violando normas e ética", "Aumentando produtividade legalmente"],
+             "resposta": 1,
+             "explicacao": [
+                 "Errado: Cumprir a NR-12 exige proteção.",
+                 "Correto: Operar sem proteção é violar norma e ética.",
+                 "Errado: Não é legal nem seguro."]
+            },
+            {"pergunta": "Participar de treinamentos de segurança é:",
+             "opcoes": ["Opcional", "Obrigatório e ético", "Perda de tempo"],
+             "resposta": 1,
+             "explicacao": [
+                 "Errado: Não é opcional.",
+                 "Correto: Treinamentos são obrigatórios e reforçam ética.",
+                 "Errado: Não é perda de tempo."]
+            },
+            {"pergunta": "O que deve ser feito ao identificar risco de acidente?",
+             "opcoes": ["Ignorar se não afetar você", "Reportar imediatamente", "Apenas observar"],
+             "resposta": 1,
+             "explicacao": [
+                 "Errado: Ignorar é antiético.",
+                 "Correto: Reportar imediatamente é procedimento correto.",
+                 "Errado: Apenas observar não previne acidente."]
+            },
+            {"pergunta": "Bloquear uma máquina durante manutenção é:",
+             "opcoes": ["Irrelevante", "Exigência da NR-12", "Opcional se estiver com pressa"],
+             "resposta": 1,
+             "explicacao": [
+                 "Errado: Não é irrelevante.",
+                 "Correto: Bloqueio é exigência da NR-12.",
+                 "Errado: Nunca opcional."]
+            },
+            {"pergunta": "Usar EPI de forma inadequada pode resultar em:",
+             "opcoes": ["Acidentes e penalidades", "Nada acontece", "Recomendação de produção"],
+             "resposta": 0,
+             "explicacao": [
+                 "Correto: Uso inadequado pode gerar acidentes e punições.",
+                 "Errado: Algo pode acontecer sim.",
+                 "Errado: Não é recomendação de produção."]
+            },
+            {"pergunta": "NR-12 estabelece que proteções em máquinas devem ser:",
+             "opcoes": ["Sempre removíveis para agilizar operação", "Fixas e seguras", "Ignoradas se operador for experiente"],
+             "resposta": 1,
+             "explicacao": [
+                 "Errado: Nunca removíveis apenas para agilizar.",
+                 "Correto: Proteções devem ser fixas e seguras.",
+                 "Errado: Não devem ser ignoradas."]
+            },
+            {"pergunta": "Se houver dúvida sobre segurança, o operador deve:",
+             "opcoes": ["Adivinhar procedimento", "Consultar manual ou supervisor", "Ignorar o risco"],
+             "resposta": 1,
+             "explicacao": [
+                 "Errado: Adivinhar é inseguro.",
+                 "Correto: Consultar manual ou supervisor é seguro.",
+                 "Errado: Ignorar risco é antiético."]
+            },
+            {"pergunta": "Cumprir procedimentos de bloqueio é:",
+             "opcoes": ["Opcional para operadores experientes", "Obrigatório e ético", "Desnecessário"],
+             "resposta": 1,
+             "explicacao": [
+                 "Errado: Nunca opcional.",
+                 "Correto: Cumprimento é obrigatório e ético.",
+                 "Errado: Não é desnecessário."]
+            },
+            {"pergunta": "Reportar quase acidentes contribui para:",
+             "opcoes": ["Prevenção de futuros acidentes", "Nada", "Somente punição de colegas"],
+             "resposta": 0,
+             "explicacao": [
+                 "Correto: Ajuda a prevenir acidentes futuros.",
+                 "Errado: Tem impacto real.",
+                 "Errado: Não é para punir colegas."]
+            }
+        ]
+    },
+    "Boas práticas": {
+        "conteudo": (
+            "Boas práticas industriais incluem organização, limpeza, padronização e comunicação eficiente. "
+            "Seguir 5S, realizar checklists, reportar não conformidades, manter áreas limpas e organizar materiais garantem segurança e eficiência."
+        ),
+        "questoes": [
+            # Aqui inserir o bloco de 10 questões completas de Boas Práticas que te enviei anteriormente
+                {"pergunta": "O que caracteriza assédio moral?",
+         "opcoes": ["Intimidação e humilhação", "Treinamento diário", "Reuniões de equipe"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Assédio moral envolve intimidação e humilhação.",
+             "Errado: Treinamento não é assédio.",
+             "Errado: Reuniões não configuram assédio."]
+        },
+        {"pergunta": "Assédio sexual é:",
+         "opcoes": ["Comentários ou gestos indesejados", "Feedback de desempenho", "Planejamento de produção"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Assédio sexual envolve comportamento indesejado.",
+             "Errado: Feedback não é assédio.",
+             "Errado: Planejamento não é assédio."]
+        },
+        {"pergunta": "Se você testemunhar assédio, deve:",
+         "opcoes": ["Reportar imediatamente", "Ignorar", "Participar"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Reportar é obrigação ética.",
+             "Errado: Ignorar é antiético.",
+             "Errado: Participar é errado."]
+        },
+        {"pergunta": "Assédio repetitivo, mesmo sutil, é:",
+         "opcoes": ["Inaceitável", "Aceitável", "Normal"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: É inaceitável.",
+             "Errado: Não é aceitável.",
+             "Errado: Não é normal."]
+        },
+        {"pergunta": "Comentários sobre aparência de colegas é:",
+         "opcoes": ["Pode ser assédio", "Sempre permitido", "Ignorado"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Pode configurar assédio sexual.",
+             "Errado: Nem sempre permitido.",
+             "Errado: Não deve ser ignorado."]
+        },
+        {"pergunta": "Exigir favores pessoais é:",
+         "opcoes": ["Assédio", "Treinamento", "Parte da função"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: É assédio.",
+             "Errado: Não é treinamento.",
+             "Errado: Não faz parte da função."]
+        },
+        {"pergunta": "Comentários discriminatórios são:",
+         "opcoes": ["Assédio moral", "Apropriados", "Normais"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: São assédio moral.",
+             "Errado: Não são apropriados.",
+             "Errado: Não são normais."]
+        },
+        {"pergunta": "Intimidação no trabalho é:",
+         "opcoes": ["Assédio moral", "Treinamento", "Reunião normal"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Configura assédio moral.",
+             "Errado: Não é treinamento.",
+             "Errado: Não é reunião normal."]
+        },
+        {"pergunta": "Se um colega recusa avanços indesejados, você deve:",
+         "opcoes": ["Respeitar a decisão", "Insistir", "Ignorar normas"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Sempre respeitar.",
+             "Errado: Não insistir.",
+             "Errado: Não ignorar normas éticas."]
+        },
+        {"pergunta": "Denunciar assédio protege:",
+         "opcoes": ["Vítima e ética no trabalho", "Somente testemunha", "Não ajuda ninguém"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Protege a vítima e reforça ética.",
+             "Errado: Não é só testemunha.",
+             "Errado: Ajuda sim todos na empresa."]
+        }
         ]
     },
     "Compliance": {
         "conteudo": (
             "Compliance industrial garante que todos os colaboradores atuem dentro das normas legais, regulamentares e éticas. "
-            "Inclui políticas internas, código de conduta, canais de denúncia e prevenção de fraudes. "
-            "A NR-1 estabelece a obrigatoriedade de cumprimento das normas regulamentadoras. "
-            "Exemplo aplicado: se um operador identifica que um procedimento de manutenção está sendo ignorado, "
-            "o correto é reportar pelo canal formal, mesmo que a produção esteja pressionada."
+            "Inclui políticas internas, código de conduta, canais de denúncia, prevenção de fraudes e cumprimento das NRs."
         ),
         "questoes": [
-            {"pergunta": "O que significa Compliance na indústria?",
-             "opcoes": ["Seguir leis e ética", "Apenas cumprir produção", "Ignorar riscos"],
-             "resposta": 0,
-             "explicacao": [
-                 "Correto: Compliance é seguir leis e ética.",
-                 "Errado: Não é só cumprir produção.",
-                 "Errado: Ignorar riscos é antiético."]
-            },
-            # ... (adicione as demais 9 questões)
-        ]
-    },
-    "Boas práticas": {
-        "conteudo": (
-            "Boas práticas industriais incluem organização, limpeza, padronização e comunicação eficiente no ambiente de trabalho. "
-            "Exemplo: seguir o 5S, realizar checklists de operação, reportar não conformidades e manter área de trabalho organizada."
-        ),
-        "questoes": [
-            {"pergunta": "Qual o objetivo do 5S?",
-             "opcoes": ["Organização e eficiência", "Reduzir salários", "Ignorar normas"],
-             "resposta": 0,
-             "explicacao": [
-                 "Correto: O 5S visa organizar e tornar o trabalho eficiente.",
-                 "Errado: Não tem relação com salários.",
-                 "Errado: Ignorar normas é antiético."]
-            },
-            # ... (adicione as demais 9 questões)
+            # Inserir bloco completo de 10 questões de Compliance
+            
+        {"pergunta": "O que é compliance?",
+         "opcoes": ["Seguir leis e ética", "Apenas cumprir produção", "Ignorar riscos"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Compliance é seguir leis e ética.",
+             "Errado: Não é só produção.",
+             "Errado: Ignorar riscos é antiético."]
+        },
+        {"pergunta": "Reportar irregularidades é:",
+         "opcoes": ["Obrigatório", "Opcional", "Proibido"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Reportar é obrigatório.",
+             "Errado: Não é opcional.",
+             "Errado: Não é proibido."]
+        },
+        {"pergunta": "Canais de denúncia servem para:",
+         "opcoes": ["Garantir confidencialidade e correção de erros", "Difamar colegas", "Ignorar problemas"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Servem para corrigir problemas de forma ética.",
+             "Errado: Não são para difamar.",
+             "Errado: Não devem ignorar problemas."]
+        },
+        {"pergunta": "Compliance melhora:",
+         "opcoes": ["Ética e segurança", "Produção somente", "Nada"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Melhora ética, segurança e confiabilidade.",
+             "Errado: Não apenas produção.",
+             "Errado: Tem efeito real."]
+        },
+        {"pergunta": "Ignorar normas internas é:",
+         "opcoes": ["Errado", "Aceitável", "Recomendado"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Errado e antiético.",
+             "Errado: Não é aceitável.",
+             "Errado: Nunca recomendado."]
+        },
+        {"pergunta": "Cumprir o código de conduta é:",
+         "opcoes": ["Obrigatório e ético", "Opcional", "Só para gerência"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Todos devem cumprir.",
+             "Errado: Não é opcional.",
+             "Errado: Não é só para gerência."]
+        },
+        {"pergunta": "Fraudes e desvios devem ser:",
+         "opcoes": ["Reportados imediatamente", "Ignorados", "Corrigidos sozinho"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Reportar imediatamente.",
+             "Errado: Ignorar é antiético.",
+             "Errado: Corrigir sozinho é inseguro."]
+        },
+        {"pergunta": "A NR-1 exige:",
+         "opcoes": ["Cumprimento de todas as NRs", "Apenas segurança", "Não obriga nada"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: NR-1 exige cumprimento das NRs.",
+             "Errado: Não é apenas segurança.",
+             "Errado: Obriga sim."]
+        },
+        {"pergunta": "Auditorias internas servem para:",
+         "opcoes": ["Garantir conformidade", "Punir sem razão", "Evitar responsabilidades"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Garantem que tudo siga as normas.",
+             "Errado: Não é punir sem razão.",
+             "Errado: Não é para evitar responsabilidade."]
+        },
+        {"pergunta": "Compliance protege:",
+         "opcoes": ["Empresa e colaboradores", "Só a diretoria", "Ninguém"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Protege todos, garantindo ética.",
+             "Errado: Não apenas diretoria.",
+             "Errado: Protege sim todos."]
+        }
         ]
     },
     "Assédio moral e sexual": {
         "conteudo": (
-            "Assédio moral e sexual são condutas proibidas por lei e códigos internos da empresa. "
-            "É responsabilidade ética do operador reportar qualquer situação de abuso. "
-            "Exemplo: comentários inapropriados, intimidação, ou condutas que humilham colegas devem ser comunicadas imediatamente."
+            "Assédio moral envolve humilhação, intimidação ou tratamento desigual repetido. "
+            "Assédio sexual inclui comentários, gestos ou convites indesejados de cunho sexual. "
+            "É obrigação ética e legal reportar imediatamente qualquer situação de assédio."
         ),
         "questoes": [
-            {"pergunta": "O que caracteriza assédio moral?",
-             "opcoes": ["Intimidação e humilhação", "Treinamento diário", "Reuniões de equipe"],
-             "resposta": 0,
-             "explicacao": [
-                 "Correto: Assédio moral envolve intimidação e humilhação.",
-                 "Errado: Treinamento não é assédio.",
-                 "Errado: Reuniões de equipe não configuram assédio."]
-            },
-            # ... (adicione as demais 9 questões)
+            # Inserir bloco completo de 10 questões de Assédio Moral e Sexual
+             {"pergunta": "O que caracteriza assédio moral?",
+         "opcoes": ["Intimidação e humilhação", "Treinamento diário", "Reuniões de equipe"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Assédio moral envolve intimidação e humilhação.",
+             "Errado: Treinamento não é assédio.",
+             "Errado: Reuniões não configuram assédio."]
+        },
+        {"pergunta": "Assédio sexual é:",
+         "opcoes": ["Comentários ou gestos indesejados", "Feedback de desempenho", "Planejamento de produção"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Assédio sexual envolve comportamento indesejado.",
+             "Errado: Feedback não é assédio.",
+             "Errado: Planejamento não é assédio."]
+        },
+        {"pergunta": "Se você testemunhar assédio, deve:",
+         "opcoes": ["Reportar imediatamente", "Ignorar", "Participar"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Reportar é obrigação ética.",
+             "Errado: Ignorar é antiético.",
+             "Errado: Participar é errado."]
+        },
+        {"pergunta": "Assédio repetitivo, mesmo sutil, é:",
+         "opcoes": ["Inaceitável", "Aceitável", "Normal"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: É inaceitável.",
+             "Errado: Não é aceitável.",
+             "Errado: Não é normal."]
+        },
+        {"pergunta": "Comentários sobre aparência de colegas é:",
+         "opcoes": ["Pode ser assédio", "Sempre permitido", "Ignorado"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Pode configurar assédio sexual.",
+             "Errado: Nem sempre permitido.",
+             "Errado: Não deve ser ignorado."]
+        },
+        {"pergunta": "Exigir favores pessoais é:",
+         "opcoes": ["Assédio", "Treinamento", "Parte da função"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: É assédio.",
+             "Errado: Não é treinamento.",
+             "Errado: Não faz parte da função."]
+        },
+        {"pergunta": "Comentários discriminatórios são:",
+         "opcoes": ["Assédio moral", "Apropriados", "Normais"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: São assédio moral.",
+             "Errado: Não são apropriados.",
+             "Errado: Não são normais."]
+        },
+        {"pergunta": "Intimidação no trabalho é:",
+         "opcoes": ["Assédio moral", "Treinamento", "Reunião normal"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Configura assédio moral.",
+             "Errado: Não é treinamento.",
+             "Errado: Não é reunião normal."]
+        },
+        {"pergunta": "Se um colega recusa avanços indesejados, você deve:",
+         "opcoes": ["Respeitar a decisão", "Insistir", "Ignorar normas"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Sempre respeitar.",
+             "Errado: Não insistir.",
+             "Errado: Não ignorar normas éticas."]
+        },
+        {"pergunta": "Denunciar assédio protege:",
+         "opcoes": ["Vítima e ética no trabalho", "Somente testemunha", "Não ajuda ninguém"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Protege a vítima e reforça ética.",
+             "Errado: Não é só testemunha.",
+             "Errado: Ajuda sim todos na empresa."]
+        }
         ]
     },
     "Normas Regulamentadoras": {
         "conteudo": (
-            "As NRs definem obrigações legais e práticas de segurança e saúde no trabalho. "
-            "Exemplo: NR-6 (EPI), NR-12 (máquinas), NR-26 (sinalização). "
+            "As Normas Regulamentadoras (NRs) definem obrigações legais e práticas de segurança e saúde no trabalho. "
+            "Exemplos: NR-6 (EPI), NR-12 (segurança em máquinas e equipamentos), NR-26 (sinalização de segurança), NR-17 (ergonomia). "
             "O cumprimento das NRs garante ética, proteção da integridade física e legalidade das operações."
         ),
         "questoes": [
-            {"pergunta": "Qual NR trata de sinalização de segurança?",
-             "opcoes": ["NR-6", "NR-12", "NR-26"],
-             "resposta": 2,
-             "explicacao": [
-                 "Correto: NR-26 trata de sinalização.",
-                 "Errado: NR-6 trata de EPI.",
-                 "Errado: NR-12 trata de máquinas."]
-            },
-            # ... (adicione as demais 9 questões)
+            # Inserir bloco completo de 10 questões de Normas Regulamentadoras
+             {"pergunta": "Qual NR trata do uso obrigatório de EPIs?",
+         "opcoes": ["NR-6", "NR-12", "NR-26"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: NR-6 define obrigatoriedade de Equipamentos de Proteção Individual.",
+             "Errado: NR-12 trata de segurança de máquinas.",
+             "Errado: NR-26 trata de sinalização."]
+        },
+        {"pergunta": "A NR-12 é voltada para:",
+         "opcoes": ["Segurança de máquinas e equipamentos", "Sinalização de risco", "Organização do ambiente"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: NR-12 estabelece requisitos para máquinas.",
+             "Errado: NR-26 trata de sinalização.",
+             "Errado: Organização do ambiente não é foco principal."]
+        },
+        {"pergunta": "A NR-26 trata de:",
+         "opcoes": ["Sinalização de segurança", "EPI", "Treinamento de operadores"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: NR-26 estabelece cores, símbolos e sinais de segurança.",
+             "Errado: EPI é NR-6.",
+             "Errado: Treinamento não é foco da NR-26."]
+        },
+        {"pergunta": "Cumprir as NRs é:",
+         "opcoes": ["Obrigatório e ético", "Opcional", "Somente para gerência"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Cumprir NRs é exigência legal e ética.",
+             "Errado: Não é opcional.",
+             "Errado: Aplica-se a todos, não só gerência."]
+        },
+        {"pergunta": "A NR-17 trata de:",
+         "opcoes": ["Ergonomia no trabalho", "Uso de EPIs", "Sinalização de risco"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: NR-17 define ergonomia e condições adequadas para operadores.",
+             "Errado: EPIs são NR-6.",
+             "Errado: Sinalização é NR-26."]
+        },
+        {"pergunta": "Ignorar as NRs pode resultar em:",
+         "opcoes": ["Acidentes e penalidades legais", "Aumento de produção", "Reconhecimento ético"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Ignorar NRs coloca vidas em risco e gera punições.",
+             "Errado: Não necessariamente aumenta produção.",
+             "Errado: Não gera reconhecimento ético."]
+        },
+        {"pergunta": "Dispositivos de bloqueio (lockout/tagout) são exigidos por qual NR?",
+         "opcoes": ["NR-12", "NR-6", "NR-17"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: NR-12 exige bloqueio de máquinas para manutenção segura.",
+             "Errado: NR-6 é sobre EPIs.",
+             "Errado: NR-17 é ergonomia."]
+        },
+        {"pergunta": "Sinalização de segurança deve ser clara para:",
+         "opcoes": ["Todos os colaboradores", "Apenas supervisores", "Apenas visitantes"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Todos precisam reconhecer riscos.",
+             "Errado: Não só supervisores.",
+             "Errado: Não só visitantes."]
+        },
+        {"pergunta": "Treinamentos sobre NRs devem ser:",
+         "opcoes": ["Periódicos e obrigatórios", "Esporádicos", "Opcional"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Treinamentos periódicos garantem segurança e ética.",
+             "Errado: Não apenas esporádicos.",
+             "Errado: Não é opcional."]
+        },
+        {"pergunta": "O cumprimento das NRs reflete na ética porque:",
+         "opcoes": ["Protege operadores e respeita a lei", "Só aumenta burocracia", "Não tem impacto"],
+         "resposta": 0,
+         "explicacao": [
+             "Correto: Seguir NRs é agir eticamente e proteger a vida.",
+             "Errado: Não é apenas burocracia.",
+             "Errado: Tem impacto direto."]
+        }
         ]
     },
 }
@@ -142,119 +499,14 @@ def login_screen():
         if email:
             st.session_state["user"] = {"name": name, "email": email}
             st.success(f"Olá, {name}! Login efetuado.")
-            st.stop()
+            st.experimental_rerun()
         else:
             st.error("Informe seu e-mail para continuar.")
+    # Botão logout aparece se já houver sessão
+    if st.session_state.get("user"):
+        if st.button("Sair"):
+            st.session_state.pop("user")
+            st.success("Logout realizado.")
+            st.experimental_rerun()
 
-# ---------- TELA DE TÓPICOS ----------
-def show_topic(topic_name, topic_data, user_email):
-    st.subheader(topic_name)
-    st.write(topic_data["conteudo"])
-    
-    respostas = []
-    for idx, q in enumerate(topic_data["questoes"]):
-        st.markdown(f"**{idx+1}. {q['pergunta']}**")
-        escolha = st.radio(f"Escolha uma opção (Pergunta {idx+1})", q["opcoes"], key=f"{topic_name}_{idx}")
-        respostas.append(escolha)
-    
-    if st.button(f"Enviar respostas - {topic_name}"):
-        acertos = 0
-        erros = 0
-        resultados = []
-        for idx, q in enumerate(topic_data["questoes"]):
-            correta = q["opcoes"][q["resposta"]]
-            escolhida = respostas[idx]
-            acertou = escolhida == correta
-            if acertou:
-                acertos +=1
-            else:
-                erros +=1
-            st.markdown(f"**Questão {idx+1}**: Sua resposta: {escolhida}")
-            st.write(f"✅ Correta!" if acertou else f"❌ Incorreta!")
-            st.write("Explicações:")
-            for exp in q["explicacao"]:
-                st.write("-", exp)
-            resultados.append({"pergunta": q["pergunta"], "resposta_usuario": escolhida, "resposta_correta": correta})
-        st.success(f"Sua pontuação: {acertos}/{len(topic_data['questoes'])}")
-        feedback = st.text_area("Deixe seu feedback sobre o que aprendeu:")
-        payload = {
-            "topic": topic_name,
-            "score": acertos,
-            "respostas": resultados,
-            "feedback": feedback,
-            "acertos": acertos,
-            "erros": erros,
-            "timestamp": datetime.now().isoformat()
-        }
-        save_user_data(user_email, payload)
-
-# ---------- TELA DE DADOS ----------
-def show_user_data(user_email):
-    st.header("Desempenho")
-    data = get_aggregate_for_user(user_email)
-    if not data or "history" not in data:
-        st.info("Nenhum dado disponível.")
-        return
-    df = pd.DataFrame(data["history"])
-    for topic in df["topic"].unique():
-        st.subheader(topic)
-        topic_data = df[df["topic"]==topic]
-        total_acertos = topic_data["acertos"].sum()
-        total_erros = topic_data["erros"].sum()
-        st.write("Proporção de acertos e erros:")
-        chart_data = pd.DataFrame({'Resultado':['Acertos','Erros'],'Quantidade':[total_acertos,total_erros]})
-        fig, ax = plt.subplots()
-        ax.pie(chart_data['Quantidade'], labels=chart_data['Resultado'], autopct='%1.1f%%', startangle=90)
-        ax.axis('equal')
-        st.pyplot(fig)
-    st.dataframe(df[["topic","score","feedback","timestamp"]])
-
-# ---------- TELA ADMIN ----------
-def show_admin():
-    st.header("Administração - Exportar CSV")
-    all_data = []
-    for file in DATA_DIR.glob("*.json"):
-        user_data = json.loads(file.read_text(encoding='utf-8'))
-        email = file.stem.replace("_at_","@")
-        for entry in user_data.get("history",[]):
-            all_data.append({
-                "email": email,
-                "topic": entry.get("topic"),
-                "score": entry.get("score"),
-                "acertos": entry.get("acertos"),
-                "erros": entry.get("erros"),
-                "feedback": entry.get("feedback"),
-                "timestamp": entry.get("timestamp")
-            })
-    if all_data:
-        df = pd.DataFrame(all_data)
-        csv_path = DATA_DIR / "consolidado.csv"
-        df.to_csv(csv_path, index=False)
-        st.success(f"CSV gerado: {csv_path}")
-        st.dataframe(df)
-    else:
-        st.info("Nenhum dado encontrado.")
-
-# ---------- MAIN ----------
-def main():
-    initialize_session()
-    user = st.session_state.get("user")
-    if not user:
-        login_screen()
-    else:
-        st.sidebar.title(f"Olá, {user['name']}")
-        escolha = st.sidebar.radio("Menu", ["Tópicos","Dados","Administração"])
-        if escolha=="Tópicos":
-            for topic_name, topic_data in TOPICOS.items():
-                if st.button(f"Abrir {topic_name}"):
-                    show_topic(topic_name, topic_data, user['email'])
-        elif escolha=="Dados":
-            show_user_data(user['email'])
-        elif escolha=="Administração":
-            if user['email']==ADMIN_EMAIL:
-                show_admin()
-            else:
-                st.error("Acesso negado.")
-
-if __name__=="__main__":
-    main()
+# ---------- TELA DE TÓ
