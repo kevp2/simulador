@@ -199,11 +199,6 @@ def mostrar_conteudo(topico):
     > NRs não são burocracia — são a diferença entre vida e morte.
     """)
 
-
-    # -------------------- OUTROS TÓPICOS (Boas Práticas, Compliance, Assédio, Normas) --------------------
-    # Aqui você pode incluir os outros tópicos com 10 questões cada, seguindo o mesmo modelo de Segurança
-}
-
 # ---------- FUNÇÕES DE DADOS ----------
 def save_user_data(user_email, topico, questao, acertou, feedback):
     path = DATA_DIR / f"{user_email.replace('@','_at_')}.json"
