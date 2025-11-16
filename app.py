@@ -11,7 +11,9 @@ DATA_DIR.mkdir(exist_ok=True)
 ADMIN_EMAIL = "kevin.172062@fmm.org.br"
 
 # ---------- TOPICOS COMPLETOS COM 10 QUESTÕES CADA ----------
-TOPICOS = {
+def mostrar_conteudo(topico):
+    st.title(f"📘 Curso: {topico}")
+    
     if topico == "Segurança no Trabalho":
     st.markdown("""
     A Segurança do Trabalho representa a base da ética operacional e é parte essencial da cultura organizacional
