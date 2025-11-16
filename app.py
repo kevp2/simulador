@@ -12,188 +12,192 @@ ADMIN_EMAIL = "kevin.172062@fmm.org.br"
 
 # ---------- TOPICOS COMPLETOS COM 10 QUESTÕES CADA ----------
 TOPICOS = {
-    "Segurança no trabalho": {
-        "conteudo": (
-            "A segurança no trabalho é um imperativo legal e ético na indústria. "
-            "A NR-6 determina a obrigatoriedade do fornecimento, uso e conservação dos EPIs "
-            "quando os riscos não podem ser eliminados por medidas coletivas. "
-            "A NR-12 estabelece requisitos de projeto, proteção e manutenção de máquinas, "
-            "incluindo dispositivos de bloqueio (lockout/tagout), proteções físicas e intertravamentos. "
-            "Programas de controle de riscos (identificação, avaliação e mitigação) são fundamentais para redução de exposições. "
-            "No dia a dia do operador, agir conforme procedimentos de bloqueio, usar EPIs, reportar riscos e participar de treinamentos "
-            "são práticas que unem conformidade legal e responsabilidade ética."
-        ),
-        "questoes": [
-            {"pergunta": "De acordo com a NR-6, qual a ação correta ao identificar um EPI danificado antes do turno?",
-             "opcoes": ["Consertar sozinho e usar normalmente", "Comunicar e aguardar substituição", "Continuar sem EPI se for rápido"],
-             "resposta": 1,
-             "explicacao": [
-                 "Errado: Consertar sozinho pode colocar sua vida em risco.",
-                 "Correto: Comunicar imediatamente e aguardar substituição é o procedimento correto e ético.",
-                 "Errado: Continuar sem EPI é uma violação das normas de segurança e ética."]
-            },
-            {"pergunta": "Ao operar uma máquina sem proteção adequada, o operador está:",
-             "opcoes": ["Cumprindo a NR-12", "Violando normas e ética", "Aumentando produtividade legalmente"],
-             "resposta": 1,
-             "explicacao": [
-                 "Errado: Cumprir a NR-12 exige proteção.",
-                 "Correto: Operar sem proteção é violar norma e ética.",
-                 "Errado: Não é legal nem seguro."]
-            },
-            {"pergunta": "Participar de treinamentos de segurança é:",
-             "opcoes": ["Opcional", "Obrigatório e ético", "Perda de tempo"],
-             "resposta": 1,
-             "explicacao": [
-                 "Errado: Não é opcional.",
-                 "Correto: Treinamentos são obrigatórios e reforçam ética.",
-                 "Errado: Não é perda de tempo."]
-            },
-            {"pergunta": "O que deve ser feito ao identificar risco de acidente?",
-             "opcoes": ["Ignorar se não afetar você", "Reportar imediatamente", "Apenas observar"],
-             "resposta": 1,
-             "explicacao": [
-                 "Errado: Ignorar é antiético.",
-                 "Correto: Reportar imediatamente é procedimento correto.",
-                 "Errado: Apenas observar não previne acidente."]
-            },
-            {"pergunta": "Bloquear uma máquina durante manutenção é:",
-             "opcoes": ["Irrelevante", "Exigência da NR-12", "Opcional se estiver com pressa"],
-             "resposta": 1,
-             "explicacao": [
-                 "Errado: Não é irrelevante.",
-                 "Correto: Bloqueio é exigência da NR-12.",
-                 "Errado: Nunca opcional."]
-            },
-            {"pergunta": "Usar EPI de forma inadequada pode resultar em:",
-             "opcoes": ["Acidentes e penalidades", "Nada acontece", "Recomendação de produção"],
-             "resposta": 0,
-             "explicacao": [
-                 "Correto: Uso inadequado pode gerar acidentes e punições.",
-                 "Errado: Algo pode acontecer sim.",
-                 "Errado: Não é recomendação de produção."]
-            },
-            {"pergunta": "NR-12 estabelece que proteções em máquinas devem ser:",
-             "opcoes": ["Sempre removíveis para agilizar operação", "Fixas e seguras", "Ignoradas se operador for experiente"],
-             "resposta": 1,
-             "explicacao": [
-                 "Errado: Nunca removíveis apenas para agilizar.",
-                 "Correto: Proteções devem ser fixas e seguras.",
-                 "Errado: Não devem ser ignoradas."]
-            },
-            {"pergunta": "Se houver dúvida sobre segurança, o operador deve:",
-             "opcoes": ["Adivinhar procedimento", "Consultar manual ou supervisor", "Ignorar o risco"],
-             "resposta": 1,
-             "explicacao": [
-                 "Errado: Adivinhar é inseguro.",
-                 "Correto: Consultar manual ou supervisor é seguro.",
-                 "Errado: Ignorar risco é antiético."]
-            },
-            {"pergunta": "Cumprir procedimentos de bloqueio é:",
-             "opcoes": ["Opcional para operadores experientes", "Obrigatório e ético", "Desnecessário"],
-             "resposta": 1,
-             "explicacao": [
-                 "Errado: Nunca opcional.",
-                 "Correto: Cumprimento é obrigatório e ético.",
-                 "Errado: Não é desnecessário."]
-            },
-            {"pergunta": "Reportar quase acidentes contribui para:",
-             "opcoes": ["Prevenção de futuros acidentes", "Nada", "Somente punição de colegas"],
-             "resposta": 0,
-             "explicacao": [
-                 "Correto: Ajuda a prevenir acidentes futuros.",
-                 "Errado: Tem impacto real.",
-                 "Errado: Não é para punir colegas."]
-            }
-        ]
-    },
-    "Compliance": {
-        "conteudo": (
-            "Compliance industrial garante que todos os colaboradores atuem dentro das normas legais, regulamentares e éticas. "
-            "Inclui políticas internas, código de conduta, canais de denúncia, prevenção de fraudes e cumprimento das NRs."
-        ),
-        "questoes": [
-            {"pergunta": "O que é compliance?",
-             "opcoes": ["Seguir leis e ética", "Apenas cumprir produção", "Ignorar riscos"],
-             "resposta": 0,
-             "explicacao": [
-                 "Correto: Compliance é seguir leis e ética.",
-                 "Errado: Não é só produção.",
-                 "Errado: Ignorar riscos é antiético."]
-            },
-            {"pergunta": "Reportar irregularidades é:",
-             "opcoes": ["Obrigatório", "Opcional", "Proibido"],
-             "resposta": 0,
-             "explicacao": [
-                 "Correto: Reportar é obrigatório.",
-                 "Errado: Não é opcional.",
-                 "Errado: Não é proibido."]
-            },
-            {"pergunta": "Canais de denúncia servem para:",
-             "opcoes": ["Garantir confidencialidade e correção de erros", "Difamar colegas", "Ignorar problemas"],
-             "resposta": 0,
-             "explicacao": [
-                 "Correto: Servem para corrigir problemas de forma ética.",
-                 "Errado: Não são para difamar.",
-                 "Errado: Não devem ignorar problemas."]
-            },
-            {"pergunta": "Compliance melhora:",
-             "opcoes": ["Ética e segurança", "Produção somente", "Nada"],
-             "resposta": 0,
-             "explicacao": [
-                 "Correto: Melhora ética, segurança e confiabilidade.",
-                 "Errado: Não apenas produção.",
-                 "Errado: Tem efeito real."]
-            },
-            {"pergunta": "Ignorar normas internas é:",
-             "opcoes": ["Errado", "Aceitável", "Recomendado"],
-             "resposta": 0,
-             "explicacao": [
-                 "Correto: Errado e antiético.",
-                 "Errado: Não é aceitável.",
-                 "Errado: Nunca recomendado."]
-            },
-            {"pergunta": "Cumprir o código de conduta é:",
-             "opcoes": ["Obrigatório e ético", "Opcional", "Só para gerência"],
-             "resposta": 0,
-             "explicacao": [
-                 "Correto: Todos devem cumprir.",
-                 "Errado: Não é opcional.",
-                 "Errado: Não é só para gerência."]
-            },
-            {"pergunta": "Fraudes e desvios devem ser:",
-             "opcoes": ["Reportados imediatamente", "Ignorados", "Corrigidos sozinho"],
-             "resposta": 0,
-             "explicacao": [
-                 "Correto: Reportar imediatamente.",
-                 "Errado: Ignorar é antiético.",
-                 "Errado: Corrigir sozinho é inseguro."]
-            },
-            {"pergunta": "A NR-1 exige:",
-             "opcoes": ["Cumprimento de todas as NRs", "Apenas segurança", "Não obriga nada"],
-             "resposta": 0,
-             "explicacao": [
-                 "Correto: NR-1 exige cumprimento das NRs.",
-                 "Errado: Não é apenas segurança.",
-                 "Errado: Obriga sim."]
-            },
-            {"pergunta": "Auditorias internas servem para:",
-             "opcoes": ["Garantir conformidade", "Punir sem razão", "Evitar responsabilidades"],
-             "resposta": 0,
-             "explicacao": [
-                 "Correto: Garantem que tudo siga as normas.",
-                 "Errado: Não é punir sem razão.",
-                 "Errado: Não é para evitar responsabilidade."]
-            },
-            {"pergunta": "Compliance protege:",
-             "opcoes": ["Empresa e colaboradores", "Só a diretoria", "Ninguém"],
-             "resposta": 0,
-             "explicacao": [
-                 "Correto: Protege todos, garantindo ética.",
-                 "Errado: Não apenas diretoria.",
-                 "Errado: Protege sim todos."]
-            }
-        ]
-    },
+    if topico == "Segurança no Trabalho":
+    st.markdown("""
+    A Segurança do Trabalho representa a base da ética operacional e é parte essencial da cultura organizacional
+    responsável. Sua função vai além da prevenção de acidentes — ela garante a integridade física e psicológica do
+    trabalhador, preserva vidas e promove responsabilidade social.
+
+    De acordo com a **NR-1 (Disposições Gerais)**, toda atividade laboral deve garantir condições seguras.
+    A **NR-6** define a obrigatoriedade do fornecimento e uso correto dos EPIs. Já a **NR-12** trata da segurança em
+    máquinas e equipamentos, sendo uma das NRs mais fiscalizadas do país.  
+
+    ## 📌 Por que segurança é um dever ético e não apenas legal?
+    - Porque protege não só o operador, mas sua família e sua qualidade de vida
+    - Reduz lesões permanentes, afastamentos e sequelas
+    - Constrói um ambiente de confiança e cultura preventiva
+    - Reduz custos invisíveis e evita multas e indenizações
+
+    ## 📜 Normas mais aplicadas neste contexto
+    - NR-6 — Equipamentos de Proteção Individual
+    - NR-12 — Máquinas e Equipamentos
+    - NR-17 — Ergonomia
+    - NR-35 — Trabalho em Altura
+
+    ## ⚠ Exemplos reais
+    - Amputações por falha em enclausuramento de máquinas (NR-12)
+    - Perda auditiva por ausência de EPI (NR-6)
+    - Lesão por esforço repetitivo por condições inadequadas (NR-17)
+    - Queda de plataforma por falha em treinamento (NR-35)
+
+    ## 🧠 Base Técnica / Fontes
+    - FUNDACENTRO
+    - MTE – Manuais de Aplicação das NR
+    - Revista Proteção Industrial (2022)
+    - Artigo: “Impacto da cultura de segurança na performance operacional”
+
+    > Ética industrial significa não aceitar acidentes como “normais”, e sim buscar tolerância zero a riscos.
+    """)
+
+    elif topico == "Compliance":
+    st.markdown("""
+    Compliance no ambiente industrial significa “agir em conformidade” com leis, regulamentos internos, padrões de ética
+    e valores institucionais. Ele garante integridade nas relações, transparência nos processos e proteção à empresa
+    contra riscos legais e reputacionais.
+
+    ## 📌 Não existe cultura ética sem compliance.
+    O cumprimento da lei não é opcional — é obrigatório e representa respeito às pessoas, à empresa e à sociedade.
+
+    ## ⚖ Base Legal
+    - Lei 12.846/2013 (Lei Anticorrupção)
+    - Decreto 8.420/2015 (Regulamentação)
+    - ISO 37001 – Sistema de gestão antissuborno
+    - Código Penal Brasileiro
+    - LGPD (Lei Geral de Proteção de Dados)
+
+    ## 🧩 Exemplos práticos de compliance industrial:
+    - Proibição de “jeitinho” para liberar produção irregular
+    - Envio de relatórios de qualidade sem adulteração
+    - Proibição de corrupção interna ou pagamento de vantagens
+    - Imparcialidade em promoções e avaliações
+    - Rastreabilidade na cadeia produtiva
+
+    ## ⚠ Riscos reais sem compliance:
+    - Multas milionárias
+    - Prisão de colaboradores e gestores
+    - Interdição da fábrica
+    - Perda de contratos internacionais
+    - Danos irreversíveis à marca
+
+    ## 🧠 Base Técnica / Fontes
+    - CGU – Cartilha de Compliance
+    - FGV – Estudos em integridade corporativa
+    - Harvard Business Review (2021) – Compliance Culture
+
+    > Compliance não é “moda”: é sobrevivência ética e legal da organização.
+    """)
+    elif topico == "Boas Práticas":
+    st.markdown("""
+    Boas práticas industriais englobam comportamento, organização, disciplina operacional, ética e respeito aos padrões
+    estabelecidos. Um operador ético executa processos conforme especificado mesmo quando ninguém está olhando.
+
+    ## 💡 Boas práticas envolvem:
+    - Uso adequado de EPIs
+    - Seguir padrões operacionais (POPs)
+    - Manter a organização do posto de trabalho (5S)
+    - Reportar falhas imediatamente
+    - Respeitar equipamentos e recursos da empresa
+    - Técnica + ética = execução confiável
+
+    ## 🏭 Fundamentos Lean aplicados a ética
+    - 5S
+    - Kaizen
+    - Jidoka (parar quando há anomalia)
+    - Poka-Yoke (prevenção de erro)
+    - Takt Time / Fluxo contínuo
+    - Trabalho padronizado
+
+    ## 📌 Exemplos de boas práticas:
+    - Não ignorar falhas para “bater meta”
+    - Não suprimir proteções de máquinas
+    - Não alterar parâmetros sem autorização
+    - Limpeza após o turno
+    - Registro honesto de defeitos
+
+    ## 🧠 Base Técnica / Fontes
+    - Toyota Production System
+    - Kaoru Ishikawa
+    - Seiichi Nakajima (TPM)
+    - Womack & Jones (Lean Thinking)
+
+    > Boas práticas ≠ só seguir regras. Elas formam o caráter operacional do colaborador.
+    """)
+
+    elif topico == "Assédio Moral e Sexual":
+    st.markdown("""
+    Assédio é qualquer comportamento indesejado e reiterado que causa constrangimento, humilhação, intimidação ou
+    constrói um ambiente hostil. É uma violação grave dos direitos humanos e da ética organizacional.
+
+    ## Tipos mais comuns de assédio:
+    - Moral (humilhações, isolamento, ameaças, xingamentos)
+    - Sexual (convites, toques, chantagens, exposição, piadas)
+    - Organizacional (pressão abusiva, metas impossíveis, punição pública)
+
+    ## ⚖ Base Legal
+    - Consolidação das Leis do Trabalho (CLT)
+    - Código Penal Brasileiro – Art. 216-A
+    - Lei 14.457/22 – Medidas de prevenção ao assédio
+    - NR-17 (Ambiente psicologicamente saudável)
+    - OIT – Convenção 190
+
+    ## ⚠ Exemplos reais:
+    - Gestor que expõe funcionário publicamente
+    - Colega fazendo piadas de cunho sexual repetidamente
+    - Pressão para “conceder favores” em troca de promoção
+    - Apelidos constrangedores
+
+    ## 🚨 Consequências
+    - Demissão por justa causa
+    - Indenização e danos morais
+    - Processo criminal
+    - Responsabilidade civil da empresa
+    - Traumas psicológicos e suicídio
+
+    > Onde existe respeito, existe segurança psicológica — base da ética industrial.
+    """)
+
+    elif topico == "Normas Regulamentadoras (NRs)":
+    st.markdown("""
+    As Normas Regulamentadoras (NRs) são leis federais emitidas pelo Ministério do Trabalho
+    que estabelecem requisitos mínimos obrigatórios para proteger a saúde e a integridade dos trabalhadores.
+
+    ## As NRs representam:
+    - obrigação legal
+    - diretriz técnica
+    - compromisso ético com a vida
+    - responsabilidade civil e criminal
+
+    ## 📜 Principais NRs aplicadas à indústria:
+    - NR-1 – Disposições gerais
+    - NR-5 – CIPA
+    - NR-6 – EPIs
+    - NR-10 – Eletricidade
+    - NR-12 – Máquinas e equipamentos
+    - NR-17 – Ergonomia
+    - NR-26 – Sinalização
+    - NR-35 – Trabalho em altura
+
+    ## 📌 Aplicação ética das NRs:
+    - Cumprir procedimentos mesmo sem fiscalização
+    - Não mascarar condições inseguras
+    - Parar máquina quando há risco
+    - Realizar treinamentos com responsabilidade
+
+    ## ⚠ Exemplos reais:
+    - Multa + interdição por NR-12 em injetoras
+    - Queda fatal em plataforma sem NR-35
+    - Choque elétrico por falha NR-10
+
+    ## 🧠 Fontes técnicas:
+    - Fundacentro
+    - MTE
+    - ABNT
+    - Estudos da USP sobre gestão de riscos industriais
+
+    > NRs não são burocracia — são a diferença entre vida e morte.
+    """)
+
+
     # -------------------- OUTROS TÓPICOS (Boas Práticas, Compliance, Assédio, Normas) --------------------
     # Aqui você pode incluir os outros tópicos com 10 questões cada, seguindo o mesmo modelo de Segurança
 }
