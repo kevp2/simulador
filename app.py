@@ -4,7 +4,9 @@ import json
 import pandas as pd
 from pathlib import Path
 from datetime import datetime
-import plotly.express as px
+import matplotlib.pyplot as plt
+import numpy as np
+
 
 # ---------------- CONFIG ----------------
 DATA_DIR = Path("data")
