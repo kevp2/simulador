@@ -529,7 +529,7 @@ def login_screen():
         if st.sidebar.button("🚪 Logout"):
             st.session_state.clear()
             initialize_session()
-            st.experimental_rerun()
+            st.rerun()
         return True
 
 # ---------- Mostrar aula (conteúdo) ----------
@@ -631,7 +631,7 @@ def topico_screen():
                         st.session_state["modo_questoes"] = False
                         st.session_state["tela"] = "resultados"
                         st.success("🎉 Você finalizou o caderno de questões!")
-                    st.experimental_rerun()
+                    st.rerun()
             else:
                 st.write("")  # placeholder
 
@@ -639,7 +639,7 @@ def topico_screen():
             if st.button("🔁 Encerrar (ver resultados)", key=f"finish_{topico}_{idx}"):
                 st.session_state["modo_questoes"] = False
                 st.session_state["tela"] = "resultados"
-                st.experimental_rerun()
+                st.rerun()
 
 # ---------- TELA DE RESULTADOS E FEEDBACK ----------
 def results_and_feedback_screen():
@@ -702,7 +702,7 @@ def results_and_feedback_screen():
 
     if st.button("Voltar aos Tópicos"):
         st.session_state["tela"] = "Tópicos"
-        st.experimental_rerun()
+        st.rerun()
 
 # ---------- TELA DE PERFORMANCE (GRÁFICOS) ----------
 def performance_screen():
