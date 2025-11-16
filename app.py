@@ -239,35 +239,75 @@ def login_screen():
             st.success("Logout realizado.")
         return True
 
-# ---------- TELA DE TÓPICOS ----------
+# ---------- TELA DE TÓPICOS (NOVA VERSÃO CLEAN + QUESTÃO POR QUESTÃO) ----------
 def topico_screen():
-    st.header("Tópicos de Treinamento")
+    st.title("📘 Simulador Ético Industrial")
+    st.write("Selecione um tópico para iniciar o aprendizado:")
+
     topico_escolhido = st.selectbox("Escolha o tópico", list(TOPICOS.keys()))
-    info = TOPICOS[topico_escolhido]["conteudo"]
-    st.markdown(f"**Conteúdo:**\n{info}")
 
-    questoes = TOPICOS[topico_escolhido]["questoes"]
-    respostas_usuario = []
+    # AULA / EXPLICAÇÃO COMPLETA ANTES DAS QUESTÕES
+    st.subheader(f"📖 Aula: {topico_escolhido}")
+    st.info(TOPICOS[topico_escolhido]["conteudo"])
 
-    st.write("---")
-    st.subheader("Responda as questões abaixo:")
+    if st.button("👉 Iniciar caderno de questões"):
+        st.session_state["modo_questoes"] = True
+        st.session_state["topico_atual"] = topico_escolhido
+        st.session_state["questao_atual"] = 0
+        st.session_state["acertos"] = 0
 
-    for i, q in enumerate(questoes):
-        st.write(f"**{i+1}. {q['pergunta']}**")
-        opcao = st.radio(f"Questão {i+1}", q["opcoes"], key=f"{topico_escolhido}_{i}")
-        acertou = q["opcoes"].index(opcao) == q["resposta"]
-        respostas_usuario.append(acertou)
-        if st.button(f"Verificar questão {i+1}", key=f"verif_{i}"):
-            st.write(f"**Sua resposta:** {opcao}")
-            st.write(f"**Correto:** {q['opcoes'][q['resposta']]}")
-            st.write(f"**Explicação:** {q['explicacao'][q['opcoes'].index(opcao)]}")
+    # --- MODO QUESTÕES ---
+    if st.session_state.get("modo_questoes", False):
+        topico = st.session_state["topico_atual"]
+        questoes = TOPICOS[topico]["questoes"]
+        idx = st.session_state["questao_atual"]
+        q = questoes[idx]
 
-        # Coleta feedback
-        feedback = st.text_area(f"Feedback sobre o que aprendeu na questão {i+1}:", key=f"fb_{i}")
-        if st.button(f"Salvar feedback {i+1}", key=f"save_fb_{i}"):
-            save_user_data(st.session_state["user"]["email"], topico_escolhido, q["pergunta"], acertou, feedback)
-            st.success("Feedback salvo!")
+        st.write("---")
+        st.subheader(f"Questão {idx+1} de {len(questoes)}")
+        st.write(f"**{q['pergunta']}**")
+        resposta = st.radio("Escolha a resposta:", q["opcoes"], key=f"q_{idx}")
 
+        if st.button("Confirmar resposta"):
+            acertou = q["opcoes"].index(resposta) == q["resposta"]
+            if acertou:
+                st.success("✔ Resposta correta!")
+                st.session_state["acertos"] += 1
+            else:
+                st.error("❌ Resposta incorreta.")
+
+            st.info(f"💡 Explicação: {q['explicacao'][q['opcoes'].index(resposta)]}")
+
+            save_user_data(
+                st.session_state["user"]["email"],
+                topico,
+                q["pergunta"],
+                acertou,
+                ""
+            )
+
+            if idx + 1 < len(questoes):
+                if st.button("➡ Próxima questão"):
+                    st.session_state["questao_atual"] += 1
+            else:
+                st.success("🎉 Você concluiu o questionário!")
+                st.write(f"Resultado: **{st.session_state['acertos']} / {len(questoes)}** acertos")
+
+                feedback = st.text_area("Deixe seu feedback sobre o tópico:")
+                if st.button("Salvar feedback"):
+                    save_user_data(
+                        st.session_state["user"]["email"],
+                        topico,
+                        "Feedback final",
+                        None,
+                        feedback
+                    )
+                    st.success("Feedback registrado!")
+
+                if st.button("🔁 Escolher novo tópico"):
+                    st.session_state["modo_questoes"] = False
+                    st.session_state["questao_atual"] = 0
+                    st.session_state["acertos"] = 0
 # ---------- TELA DE DESEMPENHO ----------
 def performance_screen():
     st.header("Desempenho do Usuário")
